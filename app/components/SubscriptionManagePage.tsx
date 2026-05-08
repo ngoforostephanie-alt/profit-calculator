@@ -124,12 +124,12 @@ export function SubscriptionManagePage() {
                   <h3 className="font-semibold text-gray-900 mb-1">Payment Method</h3>
                   <p className="text-sm text-gray-600">Mock Card ****1234</p>
                 </div>
-                <Link
-                  to="/payment"
+                <button
+                  onClick={() => window.location.href = "https://square.link/u/2en8GRSe"}
                   className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
                 >
                   Update
-                </Link>
+                </button>
               </div>
             </div>
 
