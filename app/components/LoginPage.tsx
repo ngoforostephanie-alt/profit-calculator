@@ -10,33 +10,40 @@ export function LoginPage() {
   const [isSignup, setIsSignup] = useState(true);
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { login, signup } = useAuth();
+  const { login, signup, upgradePlan } = useAuth();
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
+  e.preventDefault();
+  setError("");
 
-    if (!email || !password) {
-      setError("Please fill in all fields");
-      return;
-    }
+  if (!email || !password) {
+    setError("Please fill in all fields");
+    return;
+  }
 
-    if (isSignup) {
-      const success = signup(email, password);
-      if (success) {
-        navigate("/ingredients");
-      } else {
-        setError("An account with this email already exists");
-      }
+  const paid =
+    new URLSearchParams(window.location.search).get("paid") === "true";
+
+  if (isSignup) {
+    const success = signup(email, password);
+
+    if (success) {
+      if (paid) upgradePlan();
+      navigate("/ingredients");
     } else {
-      const success = login(email, password);
-      if (success) {
-        navigate("/ingredients");
-      } else {
-        setError("Invalid email or password");
-      }
+      setError("An account with this email already exists");
     }
-  };
+  } else {
+    const success = login(email, password);
+
+    if (success) {
+      if (paid) upgradePlan();
+      navigate("/ingredients");
+    } else {
+      setError("Invalid email or password");
+    }
+  }
+};
 
   return (
     <ErrorBoundary>
