@@ -125,7 +125,7 @@ export function PricingPage() {
                 </div>
               ) : (
                 <button
-                  onClick={() => navigate("/payment")}
+                  onClick={() => window.location.href = "https://square.link/u/2en8GRSe"}
                   className="w-full py-2.5 bg-white text-blue-600 rounded-md font-medium hover:bg-blue-50 transition-colors text-sm"
                 >
                   Start Professional Trial

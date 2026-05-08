@@ -122,7 +122,7 @@ export function SubscriptionManagePage() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Payment Method</h3>
-                  <p className="text-sm text-gray-600">Mock Card ****1234</p>
+                  <p className="text-sm text-gray-600"><p className="text-sm text-gray-600">Managed securely through Square</p></p>
                 </div>
                 <button
                   onClick={() => window.location.href = "https://square.link/u/2en8GRSe"}
