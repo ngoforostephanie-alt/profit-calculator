@@ -125,10 +125,10 @@ export function SubscriptionManagePage() {
                   <p className="text-sm text-gray-600"><p className="text-sm text-gray-600">Managed securely through Square</p></p>
                 </div>
                 <button
-                  onClick={() => window.location.href = "https://square.link/u/2en8GRSe"}
+                   onClick={() => window.location.href = "mailto:stephngoforo@gmail.com?subject=Update payment method"}
                   className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
                 >
-                  Update
+                  Contact Support
                 </button>
               </div>
             </div>
